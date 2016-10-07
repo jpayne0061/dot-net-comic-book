@@ -1,8 +1,20 @@
 ﻿@{
     Layout = null;
+
+    var description = "<p>Final issue! Witness the final hours of Doctor Octopus' life and his one, last, great act of revenge! Even if Spider-Man survives... <strong>will Peter Parker?</strong></p>";
+    var issueNumber = 700;
+    var seriesTitle = "The Amazing Spider-Man";
+    var artists = new string[]
+    {
+        "Script: Dan Slott",
+        "Pencils: Humberto Ramos",
+        "Inks: Victor Olazaba",
+        "Letters: Chris Eliopoulos"
+    };
 }
 
 <!DOCTYPE html>
+
 
 <html>
 <head>
@@ -13,5 +25,14 @@
     <div>
         <img src="http://www.quickmeme.com/img/98/98b39b21ff008afaa5cba1e79fc611b2ddb64b3f44f57e792397c517768f4433.jpg"/>
     </div>
+    <h1>@seriesTitle</h1>
+    <h3>issue #@issueNumber</h3>
+
+    <h5>Description:</h5>
+    <h6>@Html.Raw(@description)</h6>
+
+    <h6>Artists:</h6>
+    <h6>@artists</h6>
+
 </body>
 </html>
