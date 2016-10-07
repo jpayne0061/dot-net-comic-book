@@ -8,5 +8,10 @@ namespace dotNetComicBook.Controllers
 {
     public class ComicBooksController : Controller
     {
+        public string Detail()
+            {
+            return "helolololol from MVC.NET! ";
+            }     
+
     }
 }
