@@ -14,6 +14,22 @@ namespace dotNetComicBook.Models
         public Artist[] Artists { get; set; }
         public bool Favorite { get; set; }
 
+        public string DisplayText
+        {
+            get
+            {
+                return SeriesTitle + " #" + IssueNumber;
+            }
+        }
 
+        //series-title-issueNumber.jpg
+
+        public string ConverImageFileName
+        {
+            get
+            {
+                return SeriesTitle.Replace(" ", "-").ToLower() + "-" + IssueNumber + ".jpg";
+            }
+        }
     }
 }
