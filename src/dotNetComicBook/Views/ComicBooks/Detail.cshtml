@@ -1,38 +1,23 @@
 ﻿@{
-    Layout = null;
-
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Comic Book Detail";
 }
 
-<!DOCTYPE html>
+<h1>@ViewBag.SeriesTitle</h1>
+<h3>issue #@ViewBag.IssueNumber</h3>
 
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
+<h5>Description:</h5>
+<h6>@Html.Raw(@ViewBag.Description)</h6>
+@if (ViewBag.Artists.Length > 0)
+{   
+    <h6>Artists:</h6>
     <div>
-        <img src="http://www.quickmeme.com/img/98/98b39b21ff008afaa5cba1e79fc611b2ddb64b3f44f57e792397c517768f4433.jpg"/>
+        <ul>
+            @foreach (var artist in ViewBag.Artists)
+            {
+                <li>@(artist + " ")</li>;
+            }
+        </ul>
     </div>
-    <h1>@ViewBag.SeriesTitle</h1>
-    <h3>issue #@ViewBag.IssueNumber</h3>
+}
 
-    <h5>Description:</h5>
-    <h6>@Html.Raw(@ViewBag.Description)</h6>
-    @if (ViewBag.Artists.Length > 0)
-    {   
-        <h6>Artists:</h6>
-        <div>
-            <ul>
-                @foreach (var artist in ViewBag.Artists)
-                {
-                    <li>@(artist + " ")</li>;
-                }
-            </ul>
-        </div>
-    }
-
-
-</body>
-</html>
