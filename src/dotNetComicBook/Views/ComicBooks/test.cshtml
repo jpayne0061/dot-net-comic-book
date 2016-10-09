@@ -11,6 +11,12 @@
         "Toad",
         "Yoshi"
     };
+
+    dotNetComicBook.Models.test tes = new dotNetComicBook.Models.test();
+    tes.Title = "Biggy";
+    tes.Publisher = "N 64";
+    var combined = tes.DisplayText;
+
 }
 
 <!DOCTYPE html>
@@ -28,10 +34,12 @@
 
             @foreach (var character in characters)
             {
-                <li>@character</li>;
+                <li>@character</li>
             }
         </ul>
     
     </div>
+
+    <div>@combined</div>
 </body>
 </html>
